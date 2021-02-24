@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Task_1._1
 {
@@ -79,6 +80,61 @@ namespace Task_1._1
             Console.WriteLine("Cумма чисел меньше 1000, кратных 3 или 5 равна: {0}.", sum);
         }
 
+        static void FontAdjustment()
+        {
+            List<string> fonts = new List<string>();
+
+            int n;
+            do
+            {
+                Console.WriteLine("Введите: ");
+                Console.WriteLine("\t" + "1: bold");
+                Console.WriteLine("\t" + "2: italic");
+                Console.WriteLine("\t" + "3: underline");
+                if (!Int32.TryParse(Console.ReadLine(), out n))
+                {
+                    Console.WriteLine("Вы ввели не цифру!");
+                }
+                switch (n)
+                {
+                    case 1:
+                        if (!fonts.Contains("Bold"))
+                        {
+                            fonts.Add("Bold");
+                        }
+                        else
+                        {
+                            fonts.Remove("Bold");
+                        }
+                        Console.WriteLine("Параметры надписи: " + string.Join(", ", fonts));
+                        break;
+                    case 2:
+                        if (!fonts.Contains("Italic"))
+                        {
+                            fonts.Add("Italic");
+                        }
+                        else
+                        {
+                            fonts.Remove("Italic");
+                        }
+                        Console.WriteLine("Параметры надписи: " + string.Join(", ", fonts));
+                        break;
+                    case 3:
+                        if (!fonts.Contains("Underline"))
+                        {
+                            fonts.Add("Underline");
+                        }
+                        else
+                        {
+                            fonts.Remove("Underline");
+                        }
+                        Console.WriteLine("Параметры надписи: " + string.Join(", ", fonts));
+                        break;
+                }
+            }
+            while (n < 4);
+        }
+
         static void DividingLine()
         {
             Console.WriteLine("----------------------------------");
@@ -86,39 +142,57 @@ namespace Task_1._1
         static void Main(string[] args)
         {
             //Task 1.1.1
+            Console.WriteLine("Task 1.1.1");
+            Console.WriteLine();
             int a = InputValue("a");
             int b = InputValue("b");
             RectSquare(a, b);
-            Console.ReadKey();
 
             DividingLine();
 
             //Task 1.1.2
+            Console.WriteLine("Task 1.1.2");
+            Console.WriteLine();
             int n1 = InputValue("N");
             Triangle(n1);
-            Console.ReadKey();
 
             DividingLine();
 
             //Task 1.1.3
+            Console.WriteLine("Task 1.1.3");
+            Console.WriteLine();
             int n2 = InputValue("N");
             AnotherTriangle(n2);
-            Console.ReadKey();
 
             DividingLine();
 
             //Task 1.1.4
+            Console.WriteLine("Task 1.1.4");
+            Console.WriteLine();
             int n3 = InputValue("N");
             XmasTree(n3);
-            Console.ReadKey();
 
             DividingLine();
+            Console.ReadKey();
 
             //Task 1.1.5
+            Console.WriteLine("Task 1.1.5");
+            Console.WriteLine();
             SumNumbers();
-            Console.ReadKey();
 
             DividingLine();
+            Console.ReadKey();
+
+            //Task 1.1.6
+            Console.WriteLine("Task 1.1.6");
+            Console.WriteLine();
+            FontAdjustment();
+
+            DividingLine();
+
+            //Task 1.1.7
+            Console.WriteLine("Task 1.1.7");
+            Console.WriteLine();
         }
     }
 }
