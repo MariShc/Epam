@@ -5,6 +5,67 @@ namespace Task_1._1
 {
     class Program
     {
+        static void Main(string[] args)
+        {
+            //Task 1.1.1
+            Console.WriteLine("Task 1.1.1");
+            Console.WriteLine();
+            int a = InputValue("a");
+            int b = InputValue("b");
+            RectSquare(a, b);
+
+            DividingLine();
+
+            //Task 1.1.2
+            Console.WriteLine("Task 1.1.2");
+            Console.WriteLine();
+            int n1 = InputValue("N");
+            Triangle(n1);
+
+            DividingLine();
+
+            //Task 1.1.3
+            Console.WriteLine("Task 1.1.3");
+            Console.WriteLine();
+            int n2 = InputValue("N");
+            AnotherTriangle(n2, n2);
+
+            DividingLine();
+
+            //Task 1.1.4
+            Console.WriteLine("Task 1.1.4");
+            Console.WriteLine();
+            int n3 = InputValue("N");
+            XmasTree(n3);
+
+            DividingLine();
+            Console.ReadKey();
+
+            //Task 1.1.5
+            Console.WriteLine("Task 1.1.5");
+            Console.WriteLine();
+            SumNumbers();
+
+            DividingLine();
+            Console.ReadKey();
+
+            //Task 1.1.6
+            Console.WriteLine("Task 1.1.6");
+            Console.WriteLine();
+            FontAdjustment();
+
+            DividingLine();
+            Console.ReadKey();
+
+            //Task 1.1.7
+            Console.WriteLine("Task 1.1.7");
+            Console.WriteLine();
+            ArrayProcessing();
+
+            DividingLine();
+            Console.ReadKey();
+        }
+
         static void RectSquare(int a, int b)
         {
             if (a > 0 && b > 0)
@@ -37,9 +98,9 @@ namespace Task_1._1
             }
         }
 
-        static void AnotherTriangle(int n)
+        static void AnotherTriangle(int n, int countTriangle)
         {
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < countTriangle; i++)
             {
                 for (int j = 0; j < n - i - 1; j++)
                 {
@@ -56,14 +117,9 @@ namespace Task_1._1
         
         static void XmasTree(int n)
         {
-            for (int i = 0; i < n; i++)
+            for (int i = 1; i <= n; i++)
             {
-                Console.Write(" ");
-            }
-            Console.WriteLine("*");
-            for (int i = 0; i < n; i++)
-            {
-                AnotherTriangle(i + 2);
+                AnotherTriangle(n, i);
             }
         }
 
@@ -135,64 +191,49 @@ namespace Task_1._1
             while (n < 4);
         }
 
+        static void ArrayProcessing()
+        {
+            int[] array = new int[10];
+            Random nums = new Random();
+            Console.WriteLine("Рандомный массив:");
+            for (int i = 0; i < array.Length; i++)
+                array[i] = nums.Next(0, 50);
+            Console.WriteLine("[" + string.Join(", ", array) + "]");
+            Console.WriteLine();
+
+            int max = array[0], min = array[0];
+            foreach (int elem in array)
+            {
+                if (max < elem)
+                    max = elem;
+                if (min > elem)
+                    min = elem;
+            }
+            Console.WriteLine("Максимальный элемент массива: {0}", max);
+            Console.WriteLine("Минимальный элемент массива: {0}", min);
+            Console.WriteLine();
+
+            //Сортировка пузырьком
+            int tmp;
+            for (int i = 0; i < array.Length; i++)
+            {
+                for (int k = array.Length - 1; k > i; k--)
+                {
+                    if (array[k - 1] > array[k])
+                    {
+                        tmp= array[k - 1];
+                        array[k - 1] = array[k];
+                        array[k] = tmp;
+                    }
+                }
+            }
+            Console.WriteLine("Отсортированный массив:");
+            Console.WriteLine("[" + string.Join(", ", array) + "]");
+        }
+
         static void DividingLine()
         {
             Console.WriteLine("----------------------------------");
-        }
-        static void Main(string[] args)
-        {
-            //Task 1.1.1
-            Console.WriteLine("Task 1.1.1");
-            Console.WriteLine();
-            int a = InputValue("a");
-            int b = InputValue("b");
-            RectSquare(a, b);
-
-            DividingLine();
-
-            //Task 1.1.2
-            Console.WriteLine("Task 1.1.2");
-            Console.WriteLine();
-            int n1 = InputValue("N");
-            Triangle(n1);
-
-            DividingLine();
-
-            //Task 1.1.3
-            Console.WriteLine("Task 1.1.3");
-            Console.WriteLine();
-            int n2 = InputValue("N");
-            AnotherTriangle(n2);
-
-            DividingLine();
-
-            //Task 1.1.4
-            Console.WriteLine("Task 1.1.4");
-            Console.WriteLine();
-            int n3 = InputValue("N");
-            XmasTree(n3);
-
-            DividingLine();
-            Console.ReadKey();
-
-            //Task 1.1.5
-            Console.WriteLine("Task 1.1.5");
-            Console.WriteLine();
-            SumNumbers();
-
-            DividingLine();
-            Console.ReadKey();
-
-            //Task 1.1.6
-            Console.WriteLine("Task 1.1.6");
-            Console.WriteLine();
-            FontAdjustment();
-
-            DividingLine();
-
-            //Task 1.1.7
-            Console.WriteLine("Task 1.1.7");
-            Console.WriteLine();
         }
     }
 }
