@@ -64,6 +64,30 @@ namespace Task_1._1
 
             DividingLine();
             Console.ReadKey();
+
+            //Task 1.1.8
+            Console.WriteLine("Task 1.1.8");
+            Console.WriteLine();
+            NoPositive();
+
+            DividingLine();
+            Console.ReadKey();
+
+            //Task 1.1.9
+            Console.WriteLine("Task 1.1.9");
+            Console.WriteLine();
+            NonNegativeSum();
+
+            DividingLine();
+            Console.ReadKey();
+
+            //Task 1.1.10
+            Console.WriteLine("Task 1.1.10");
+            Console.WriteLine();
+            Array2D();
+
+            DividingLine();
+            Console.ReadKey();
         }
 
         static void RectSquare(int a, int b)
@@ -229,6 +253,75 @@ namespace Task_1._1
             }
             Console.WriteLine("Отсортированный массив:");
             Console.WriteLine("[" + string.Join(", ", array) + "]");
+        }
+
+        static void NoPositive()
+        {
+            int[,,] arr = new int[2, 2, 2];
+            int x = -3;
+
+            //Заполнение массива
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    for (int k = 0; k < arr.GetLength(2); k++)
+                    {
+                        arr[i, j, k] = x++;
+                    }
+                }
+            }
+
+            //Замена всех положительных элементов на нули и вывод массива
+            Console.WriteLine("Массив с замененными положительными элементами на нули:");
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    for (int k = 0; k < arr.GetLength(2); k++)
+                    {
+                        if (arr[i, j, k] > 0)
+                            arr[i, j, k] = 0;
+                        Console.WriteLine(arr[i, j, k]);
+                    }
+                    Console.WriteLine();
+                }
+                Console.WriteLine();
+            }
+        }
+
+        static void NonNegativeSum()
+        {
+            int[] array = new int[9] {-1, 0, 9, -5, 6, 11, -8, -2, 4};
+            Console.WriteLine("Массив:");
+            Console.WriteLine("[" + string.Join(", ", array) + "]");
+            int nonNegativeSum = 0;
+            foreach (int elem in array)
+            {
+                if (elem > 0)
+                    nonNegativeSum += elem;
+            }
+            Console.WriteLine("Сумма неотрицательных элементов массива равна: {0}.", nonNegativeSum);
+        }
+
+        static void Array2D()
+        {
+            int[,] array = new int[3, 3];
+            int x = 0;
+            int sum = 0;
+            Console.WriteLine("Массив:");
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                for (int j = 0; j < array.GetLength(1); j++)
+                {
+                    array[i, j] = x++;
+                    Console.WriteLine(array[i, j]);
+                    if ((i + j) % 2 == 0)
+                        sum += array[i, j];
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine("Cумма элементов массива, стоящих на чётных позициях: {0}", sum);
         }
 
         static void DividingLine()
