@@ -1,6 +1,7 @@
 ﻿using System;
+using System.Text;
 
-namespace Task_1._2
+namespace Прост
 {
     class Program
     {
@@ -44,17 +45,17 @@ namespace Task_1._2
             Console.WriteLine("Введите строку:");
             string str1 = Console.ReadLine();
             char[] charsArray = str1.ToCharArray();
-            string str2 = "";
+            StringBuilder str2 = new StringBuilder();
             for (int i = 0; i < charsArray.Length; i++)
             {
                 if (!Char.IsLetterOrDigit(charsArray[i]))
                 {
                     charsArray[i] = ' ';
                 }
-                str2 += charsArray[i];
+                str2.Append(charsArray[i]);
             }
 
-            string[] wordsArray = str2.Split(" ");
+            string[] wordsArray = str2.ToString().Split(' ');
             int sumWords = 0;
             int lengthWords = 0;
             foreach (string word in wordsArray)
@@ -80,19 +81,18 @@ namespace Task_1._2
             string str1 = Console.ReadLine();
             Console.Write("Введите вторую строку: ");
             string str2 = Console.ReadLine();
-            string result = "";
+            StringBuilder result = new StringBuilder();
             foreach (char symbol in str1)
             {
                 if (str2.Contains(symbol))
                 {
-                    result += symbol;
-                    result += symbol;
+                    result.Append(symbol).Append(symbol);
                 }
                 else
-                    result += symbol;
+                    result.Append(symbol);
             }
             Console.WriteLine();
-            Console.WriteLine("Результат: " + result);
+            Console.WriteLine("Результат: {0}", result);
         }
 
         static void LowerCase()
@@ -143,27 +143,30 @@ namespace Task_1._2
             string result = "";
             for (int i = 0; i < wordsArray.Length; i++)
             {
-                if (i == 0)
+                if (!wordsArray[i].Equals(""))
                 {
-                    wordsArray[i] = Char.ToUpper(wordsArray[0][0]) + "" 
-                        + wordsArray[0].Substring(1, wordsArray[0].Length - 1);
-                }
-                for (int j = 0; j < dividing.Length; j++)
-                {
-                    if (wordsArray[i][wordsArray[i].Length - 1].Equals(dividing[j]))
+                    if (i == 0)
                     {
-                        if (i + 1 < wordsArray.Length)
+                        wordsArray[i] = Char.ToUpper(wordsArray[0][0]) + ""
+                            + wordsArray[0].Substring(1, wordsArray[0].Length - 1);
+                    }
+                    for (int j = 0; j < dividing.Length; j++)
+                    {
+                        if (wordsArray[i][wordsArray[i].Length - 1].Equals(dividing[j]))
                         {
-                            wordsArray[i + 1] = Char.ToUpper(wordsArray[i + 1][0]) + ""
-                                + wordsArray[i + 1].Substring(1, wordsArray[i + 1].Length - 1);
+                            if (i + 1 < wordsArray.Length)
+                            {
+                                wordsArray[i + 1] = Char.ToUpper(wordsArray[i + 1][0]) + ""
+                                    + wordsArray[i + 1].Substring(1, wordsArray[i + 1].Length - 1);
+                            }
                         }
                     }
+                    if (i != 0)
+                    {
+                        result += " ";
+                    }
+                    result += wordsArray[i];
                 }
-                if (i != 0)
-                {
-                    result += " ";
-                }
-                result += wordsArray[i];
             }
             Console.WriteLine();
             Console.WriteLine(result);
@@ -175,3 +178,4 @@ namespace Task_1._2
         }
     }
 }
+
