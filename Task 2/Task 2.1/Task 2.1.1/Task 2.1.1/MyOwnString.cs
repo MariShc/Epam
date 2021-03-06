@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Хрень
+namespace Task_2._1._1
 {
     class MyOwnString
     {

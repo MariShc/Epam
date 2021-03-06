@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Хрень
+namespace Task_2._1._1
 {
     class Program
     {
@@ -19,7 +19,6 @@ namespace Хрень
             Console.WriteLine(str1.ToCharArray());
 
             Console.WriteLine($"В строке 1 есть символ 'м': { str1.MyContains('м')}");
-            Console.WriteLine(str1.MyIndexOf('а'));
         }
 
         private static char[] ReadLine(int numberLine)
