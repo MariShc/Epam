@@ -4,11 +4,11 @@ using System.Text;
 
 namespace Task_2._2._1
 {
-    public enum BarrierType
+    public enum Direction
     {
-        Stone = 1,
-        Ravine = 2,
-        Tree = 3,
-        Fence = 4,
+        RIGHT = 1,
+        LEFT = 2,
+        UP = 3,
+        DOWN = 4,
     }
 }

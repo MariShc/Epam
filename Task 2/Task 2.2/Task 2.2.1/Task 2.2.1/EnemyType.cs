@@ -6,10 +6,10 @@ namespace Task_2._2._1
 {
     public enum EnemyType
     {
-        Dragon,
-        Zombie,
-        Ghost,
-        Vampire,
-        Werewolf,
+        Dragon = 1,
+        Zombie = 2,
+        Ghost = 3,
+        Vampire = 4,
+        Werewolf = 5,
     }
 }

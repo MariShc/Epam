@@ -6,7 +6,8 @@ namespace Task_2._2._1
 {
     abstract public class MovableObject : GameObject
     {
-        abstract public void Move();
+        public Direction direction;
+        abstract public void Move(Direction dir);
 
     }
 }

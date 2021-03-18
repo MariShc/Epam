@@ -6,7 +6,7 @@ namespace Task_2._2._1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            GameField g = new GameField(100, 100);
         }
     }
 }

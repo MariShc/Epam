@@ -30,9 +30,25 @@ namespace Task_2._2._1
             P = p;
         }
 
-        public override void Move()
+        public override void Move(Direction dir)
         {
-            throw new NotImplementedException();
+            switch (dir)
+            {
+                case Direction.RIGHT:
+                    P = new Point { X = P.X + 3, Y = P.Y };
+                    break;
+                case Direction.LEFT:
+                    P = new Point { X = P.X - 3, Y = P.Y };
+                    break;
+                case Direction.UP:
+                    P = new Point { X = P.X, Y = P.Y - 3 };
+                    break;
+                case Direction.DOWN:
+                    P = new Point { X = P.X, Y = P.Y + 3 };
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
