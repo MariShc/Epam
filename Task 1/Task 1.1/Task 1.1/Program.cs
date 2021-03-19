@@ -7,87 +7,7 @@ namespace Task_1._1
     {
         static void Main(string[] args)
         {
-            //Task 1.1.1
-            Console.WriteLine("Task 1.1.1");
-            Console.WriteLine();
-            int a = InputValue("a");
-            int b = InputValue("b");
-            RectSquare(a, b);
-
-            DividingLine();
-
-            //Task 1.1.2
-            Console.WriteLine("Task 1.1.2");
-            Console.WriteLine();
-            int n1 = InputValue("N");
-            Triangle(n1);
-
-            DividingLine();
-
-            //Task 1.1.3
-            Console.WriteLine("Task 1.1.3");
-            Console.WriteLine();
-            int n2 = InputValue("N");
-            AnotherTriangle(n2, n2);
-
-            DividingLine();
-
-            //Task 1.1.4
-            Console.WriteLine("Task 1.1.4");
-            Console.WriteLine();
-            int n3 = InputValue("N");
-            XmasTree(n3);
-
-            DividingLine();
-            Console.ReadKey();
-
-            //Task 1.1.5
-            Console.WriteLine("Task 1.1.5");
-            Console.WriteLine();
-            SumNumbers();
-
-            DividingLine();
-            Console.ReadKey();
-
-            //Task 1.1.6
-            Console.WriteLine("Task 1.1.6");
-            Console.WriteLine();
-            FontAdjustment();
-
-            DividingLine();
-            Console.ReadKey();
-
-            //Task 1.1.7
-            Console.WriteLine("Task 1.1.7");
-            Console.WriteLine();
-            ArrayProcessing();
-
-            DividingLine();
-            Console.ReadKey();
-
-            //Task 1.1.8
-            Console.WriteLine("Task 1.1.8");
-            Console.WriteLine();
-            NoPositive();
-
-            DividingLine();
-            Console.ReadKey();
-
-            //Task 1.1.9
-            Console.WriteLine("Task 1.1.9");
-            Console.WriteLine();
-            NonNegativeSum();
-
-            DividingLine();
-            Console.ReadKey();
-
-            //Task 1.1.10
-            Console.WriteLine("Task 1.1.10");
-            Console.WriteLine();
-            Array2D();
-
-            DividingLine();
-            Console.ReadKey();
+            OutputOfTasks();
         }
 
         static void RectSquare(int a, int b)
@@ -101,7 +21,7 @@ namespace Task_1._1
             else Console.WriteLine("Введено некорректное значение!");
         }
 
-        static int InputValue(string s) 
+        static int InputValue(string s)
         {
             int valueS;
             do
@@ -115,7 +35,7 @@ namespace Task_1._1
         static void Triangle(int n)
         {
             string s = "";
-            for(int i = 0; i < n; i++)
+            for (int i = 0; i < n; i++)
             {
                 s += '*';
                 Console.WriteLine(s);
@@ -126,19 +46,21 @@ namespace Task_1._1
         {
             for (int i = 0; i < countTriangle; i++)
             {
+                int var1 = n - i - 1;
+                int var2 = n - i + i * 2;
                 for (int j = 0; j < n - i - 1; j++)
                 {
                     Console.Write(" ");
                 }
-                for (int k = n - i - 1; k < n - i + i * 2; k++)
+                for (int k = var1; k < var2; k++)
                 {
                     Console.Write("*");
                 }
                 Console.WriteLine();
             }
         }
-               
-        
+
+
         static void XmasTree(int n)
         {
             for (int i = 1; i <= n; i++)
@@ -245,7 +167,7 @@ namespace Task_1._1
                 {
                     if (array[k - 1] > array[k])
                     {
-                        tmp= array[k - 1];
+                        tmp = array[k - 1];
                         array[k - 1] = array[k];
                         array[k] = tmp;
                     }
@@ -292,7 +214,7 @@ namespace Task_1._1
 
         static void NonNegativeSum()
         {
-            int[] array = new int[9] {-1, 0, 9, -5, 6, 11, -8, -2, 4};
+            int[] array = new int[9] { -1, 0, 9, -5, 6, 11, -8, -2, 4 };
             Console.WriteLine("Массив:");
             Console.WriteLine("[" + string.Join(", ", array) + "]");
             int nonNegativeSum = 0;
@@ -324,9 +246,133 @@ namespace Task_1._1
             Console.WriteLine("Cумма элементов массива, стоящих на чётных позициях: {0}", sum);
         }
 
+        static void Task_1_1_1()
+        {
+            Console.WriteLine("Task 1.1.1");
+            Console.WriteLine();
+            int a = InputValue("a");
+            int b = InputValue("b");
+            RectSquare(a, b);
+        }
+
+        static void Task_1_1_2()
+        {
+            Console.WriteLine("Task 1.1.2");
+            Console.WriteLine();
+            int n1 = InputValue("N");
+            Triangle(n1);
+        }
+
+        static void Task_1_1_3()
+        {
+            Console.WriteLine("Task 1.1.3");
+            Console.WriteLine();
+            int n2 = InputValue("N");
+            AnotherTriangle(n2, n2);
+        }
+
+        static void Task_1_1_4()
+        {
+            Console.WriteLine("Task 1.1.4");
+            Console.WriteLine();
+            int n3 = InputValue("N");
+            XmasTree(n3);
+        }
+
+        static void Task_1_1_5()
+        {
+            Console.WriteLine("Task 1.1.5");
+            Console.WriteLine();
+            SumNumbers();
+        }
+
+        static void Task_1_1_6()
+        {
+            Console.WriteLine("Task 1.1.6");
+            Console.WriteLine();
+            FontAdjustment();
+        }
+
+        static void Task_1_1_7()
+        {
+            Console.WriteLine("Task 1.1.7");
+            Console.WriteLine();
+            ArrayProcessing();
+        }
+
+        static void Task_1_1_8()
+        {
+            Console.WriteLine("Task 1.1.8");
+            Console.WriteLine();
+            NoPositive();
+        }
+
+        static void Task_1_1_9()
+        {
+            Console.WriteLine("Task 1.1.9");
+            Console.WriteLine();
+            NonNegativeSum();
+        }
+
+        static void Task_1_1_10()
+        {
+            Console.WriteLine("Task 1.1.10");
+            Console.WriteLine();
+            Array2D();
+        }
+
+        static void OutputOfTasks()
+        {
+            Task_1_1_1();
+
+            DividingLine();
+
+            Task_1_1_2();
+
+            DividingLine();
+
+            Task_1_1_3();
+
+            DividingLine();
+
+            Task_1_1_4();
+
+            DivLineAndReadKey();
+
+            Task_1_1_5();
+
+            DivLineAndReadKey();
+
+            Task_1_1_6();
+
+            DivLineAndReadKey();
+
+            Task_1_1_7();
+
+            DivLineAndReadKey();
+
+            Task_1_1_8();
+
+            DivLineAndReadKey();
+
+            Task_1_1_9();
+
+            DivLineAndReadKey();
+
+            Task_1_1_10();
+
+            DivLineAndReadKey();
+        }
+
         static void DividingLine()
         {
             Console.WriteLine("----------------------------------");
+        }
+
+        static void DivLineAndReadKey()
+        {
+            DividingLine();
+            Console.ReadKey();
         }
     }
 }
