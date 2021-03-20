@@ -24,8 +24,6 @@ namespace Task_2._2._1
         {
             Width = width;
             Height = height;
-            player = new Player("CharacterOne", PointRandom());
-            Console.WriteLine($"{player.Name} создан!");
             AddEnemy();
             AddBonus();
             AddBarrier();
@@ -40,6 +38,12 @@ namespace Task_2._2._1
 
         }
 
+        public void AddPlayer(string name)
+        {
+            player = new Player(name, PointRandom());
+            Console.WriteLine($"Игрок {player.Name} создан!");
+        }
+
         public void AddEnemy()
         {
             Random rnd = new Random();
@@ -49,7 +53,7 @@ namespace Task_2._2._1
             {
                 index = rnd.Next(1, 6);
                 enemys.Add(new Enemy((EnemyType)index, PointRandom()));
-                Console.WriteLine($"Enemy {enemys[i].Name} добавлен на поле!");
+                Console.WriteLine($"Враг {enemys[i].Name} добавлен на поле!");
             }
         }
 
@@ -62,7 +66,7 @@ namespace Task_2._2._1
             {
                 index = rnd.Next(1, 5);
                 bonuses.Add(new Bonus((BonusType)index, PointRandom()));
-                Console.WriteLine($"Bonus {bonuses[i].Name} добавлен на поле!");
+                Console.WriteLine($"Бонус {bonuses[i].Name} добавлен на поле!");
             }
         }
 
@@ -75,7 +79,7 @@ namespace Task_2._2._1
             {
                 index = rnd.Next(1, 5);
                 barriers.Add(new Barrier((BarrierType)index, PointRandom()));
-                Console.WriteLine($"Barrier {barriers[i].Name} добавлен на поле!");
+                Console.WriteLine($"Барьер {barriers[i].Name} добавлен на поле!");
             }
         }
     }

@@ -50,6 +50,11 @@ namespace Task_2._2._1
                     break;
             }
         }
+        public void DrawEnemy(int p_x, int p_y)
+        {
+            Console.SetCursorPosition(p_x, p_y);
+            Console.WriteLine(Name);
+        }
     }
 }
 
