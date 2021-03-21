@@ -9,11 +9,11 @@ namespace Task_2._2._1
     {
         public Player player;
 
-        List<Enemy> enemys;
+        public List<Enemy> enemys;
 
-        List<Bonus> bonuses;
+        public List<Bonus> bonuses;
 
-        List<Barrier> barriers;
+        public List<Barrier> barriers;
 
         public int Width { get; set; }
 
@@ -32,8 +32,8 @@ namespace Task_2._2._1
         public Point PointRandom()
         {
             Random rnd = new Random();
-            int p1 = rnd.Next(0, 100);
-            int p2 = rnd.Next(0, 100);
+            int p1 = rnd.Next(0, 49);
+            int p2 = rnd.Next(0, 49);
             return new Point { X = p1, Y = p2 };
 
         }
