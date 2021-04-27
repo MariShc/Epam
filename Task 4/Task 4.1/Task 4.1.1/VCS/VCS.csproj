@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj" />
+    <ProjectReference Include="..\BLL_Contracts\BLL_Contracts.csproj" />
+    <ProjectReference Include="..\FSL\FSL.csproj" />
+    <ProjectReference Include="..\FSL_Contracts\FSL_Contracts.csproj" />
+  </ItemGroup>
+
+</Project>
