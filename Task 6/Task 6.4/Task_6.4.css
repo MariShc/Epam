@@ -1,0 +1,39 @@
+ul{
+    background-color: white;
+    border-radius: 10px;
+    width: 900px;
+    margin: 10px auto;
+    box-shadow: 0px 0px 50px 5px rgb(15, 19, 24);;
+}
+li{
+    display: inline-block;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+figcaption{
+    color: darkorange;
+}
+p{
+    text-align: center;
+}
+
+body{
+    background-color: rgb(74, 92, 110);
+}
+
+input{
+	position: relative;
+	left: 50%;
+	transform: translate(-50%, 0);
+	background-color: rgb(245, 99, 50);
+}
+.virtual{
+    border-right: 1px solid rgba(109, 109, 109, 0.849);
+    margin: 10px auto;
+    padding-right: 50px;
+}
+.server{
+    border-left: 1px solid rgba(109, 109, 109, 0.849);
+    margin: 10px auto;
+    padding-left: 50px;
+}
