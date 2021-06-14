@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Task 7.3</title>
+</head>
+<body>
+    <form action="javascript:void(0);" method="POST" onsubmit="storage.add()">
+        <input type="text" id="add-name" placeholder="Введите имя." title="Укажите любое имя для нового объекта.">
+        <input type="submit" value="Добавить">
+     </form>
+  
+     <div id="spoiler" role="aria-hidden">
+        <form action="javascript:void(0);" method="POST" id="saveEdit">
+           <input type="text" id="edit-name">
+           <input type="submit" value="Изменить" /> <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+        </form>
+     </div>
+  
+     <p id="counter"></p>
+  
+     <table>
+        <tr>
+           <th>Имя</th>
+        </tr>
+        <tbody id="animals">
+        </tbody>
+     </table>
+  </div>
+  <script src="task7_3.js"></script>
+    
+</body>
+</html>
